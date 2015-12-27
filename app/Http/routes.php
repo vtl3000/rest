@@ -11,6 +11,23 @@
 |
 */
 
-$app->get('/', function () use ($app) {
-    return $app->welcome();
-});
+//$app->get('/', function () use ($app) {
+//    return $app->welcome();
+//});
+
+$app->get('/', 'Controller@index');
+//$qwe = \App\Models\User::first()->where('name', 'Bob')->get();
+//foreach ($qwe as $user) {
+////    $app->get('/'.strtolower($user->name), 'Controller@index');
+//    $app->get('/'.$user->name, 'Controller@index');
+//}
+
+/**
+ * Settings app collections
+ */
+$app->get('settings', 'Settings@getCollectionNames');
+$app->get('settings/{name}', 'Settings@getCollectionFields');
+$app->post('settings/{name}', 'Settings@createCollection');
+$app->put('settings/{name}', 'Settings@editCollection');
+$app->delete('settings/{name}', 'Settings@deleteCollection');
+
