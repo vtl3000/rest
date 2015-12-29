@@ -1,0 +1,14 @@
+<div ng-controller="CollectionsCtrl" class="container-fluid">
+    <form ng-submit="addCollection()" class="form-inline">
+        <input type="text" ng-model="collectionName" size="30" placeholder="input mew collection name" class="form-control">
+        <input class="btn btn-default" type="submit" value="Add">
+    </form>
+    <span>All {{collections.collectionNames.length}}</span>
+    <ul class="unstyled">
+        <li ng-repeat="collection in collections.collectionNames">
+                <span class="done-todo.active">{{collection}}
+                        <a ng-click="deleteCollection(collection)">dell</a>
+                </span>
+        </li>
+    </ul>
+</div>

@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 use Laravel\Lumen\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {
     public function index(Request $request) {
-        print_r($request->all());
-        print_r($request->decodedPath());
+        return view('main', [
+            'title'   => 'Main',
+            'request' => $request,
+        ]);
     }
 
     public function get($id) {

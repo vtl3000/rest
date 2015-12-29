@@ -13,7 +13,7 @@ class Settings extends Controller
     public function getCollectionNames()
     {
         return view('json', [
-            'data' => (new SettingsModel)->getCollectionNames(),
+            'data' => ['collectionNames' => (new SettingsModel)->getCollectionNames()],
         ]);
     }
 
@@ -29,13 +29,15 @@ class Settings extends Controller
     }
 
     /**
-     * @param string $collectionName
+     * @param Request $request
+     *
      * @return \Illuminate\View\View
      */
-    public function createCollection($collectionName)
+    public function createCollection(Request $request)
     {
+        $name = $request->input('name');
         return view('json', [
-            'data' => ['status' => (new SettingsModel)->createCollection($collectionName)],
+            'data' => ['status' => $name ? (new SettingsModel)->createCollection($name) : false],
         ]);
     }
 

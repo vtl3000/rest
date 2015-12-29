@@ -26,8 +26,8 @@ $app->get('/', 'Controller@index');
  * Settings app collections
  */
 $app->get('settings', 'Settings@getCollectionNames');
+$app->post('settings', 'Settings@createCollection');
 $app->get('settings/{name}', 'Settings@getCollectionFields');
-$app->post('settings/{name}', 'Settings@createCollection');
 $app->put('settings/{name}', 'Settings@editCollection');
 $app->delete('settings/{name}', 'Settings@deleteCollection');
 
