@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <script type="text/javascript" src="/js/angular-1.4.8/angular.min.js"></script>
     <script type="text/javascript" src="/js/angular-1.4.8/angular-resource.min.js"></script>
+    <script type="text/javascript" src="/js/angular-1.4.8/angular-route.min.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
 </head>
 <body>

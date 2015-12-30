@@ -8,6 +8,7 @@
         <li ng-repeat="collection in collections.collectionNames">
                 <span class="done-todo.active">{{collection}}
                         <a ng-click="deleteCollection(collection)">dell</a>
+                        <a href="#/edit/{{collection}}">edit</a>
                 </span>
         </li>
     </ul>

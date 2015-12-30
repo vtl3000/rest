@@ -1,11 +1,11 @@
-angular.module('rest', ['ngResource']).
-//config([]
-    //function ($routeProvider) {
-    //$routeProvider//.
-    //when('/', {controller: CollectionsCtrl, templateUrl: 'templates/allCollections.html'}).
-    //otherwise({redirectTo: '/'});
-//}
-//).
+//angular.module('app', ['rest']);
+angular.module('rest', ['ngResource', 'ngRoute']).
+config(function ($routeProvider) {
+    $routeProvider.
+    when('/', {controller: $routeProvider.CollectionsCtrl, templateUrl: 'templates/allCollections.html'}).
+    when('/edit/:projectId', {controller:EditCtrl, templateUrl:'detail.html'}).
+    otherwise({redirectTo: '/'});
+}).
 factory('Settings', function ($resource) {
     return $resource('settings/:name/:id', {}, {
         all: {method: 'GET'},
